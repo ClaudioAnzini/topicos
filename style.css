@@ -103,6 +103,7 @@ header{
     border-radius: 12px;
     box-shadow: 5px 5px 12px black;
     text-decoration: none;
+    display: flex;
 }
 .flex-div{
     display: flex;
