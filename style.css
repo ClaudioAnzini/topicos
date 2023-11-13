@@ -56,6 +56,7 @@ header{
     display: flex;
     margin: 0;
     padding-left: 100px;
+    text-decoration: none;
 }
 .menu-item{
     padding-right: 20px;
@@ -100,8 +101,8 @@ header{
     background-color: #7B1818;
     color: white;
     border-radius: 12px;
+    box-shadow: 5px 5px 12px black;
     text-decoration: none;
-    cursor: pointer;
 }
 .flex-div{
     display: flex;
@@ -129,7 +130,7 @@ header{
 }
 
 .bloco-div-texto p {
-    font-size: 12px;
+    font-size: 12px; 
 }
 
 .bloco-div-img{
@@ -231,6 +232,21 @@ header{
     width:auto;
     margin-left: 20%;
 }
-.menu-reponsivo{
-    
+#menu-reponsivo{
+    position: fixed;
+    right: 0px;
+    margin-left: 52%;
+    padding-left: 10px;
+    font-size: 30px; 
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: -10px;
+}
+@media screen and (max-width: 600px){
+    .sumir{
+        display: none;
+    }
+    #menu-reponsivo{
+        margin-top: -22px;
+    }
 }
