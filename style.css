@@ -79,7 +79,7 @@ header{
 }
 .botao-primario{
     text-decoration: none !important;
-    background-color: FE6161;
+    background-color: #FE6161;
     border-radius: 32px;
     padding: 12px 32px;
     width:auto;
@@ -90,11 +90,14 @@ header{
     display: flex;
     align-items: center;
 }
+.bloco-div-img-texto{
+    display: flex;
+    height: 85%;
+}
 .bloco{
     height: 335px;
     width: 325px;
     background-color: #7B1818;
-    display: flex;
     color: white;
     border-radius: 12px;
     text-decoration: none;
@@ -221,3 +224,11 @@ header{
         transform: scale(1);
     }
   }
+.botao-adicionar{
+    text-decoration: none !important;
+    background-color: #FE6161;
+    border-radius: 12px;
+    padding: 5px 20px;
+    width:auto;
+    margin-left: 20%;
+}
