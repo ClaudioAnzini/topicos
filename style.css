@@ -96,7 +96,7 @@ header{
 }
 .bloco{
     height: 335px;
-    width: 325px;
+    width: 350px;
     background-color: #7B1818;
     color: white;
     border-radius: 12px;
@@ -139,7 +139,6 @@ header{
 .bloco-div-img img{
     height: 90%;
     width: 100%;
-    object-fit: cover;
     border-top-right-radius: 12px;
 }
 .section-final{
@@ -231,4 +230,7 @@ header{
     padding: 5px 20px;
     width:auto;
     margin-left: 20%;
+}
+.menu-reponsivo{
+    
 }
