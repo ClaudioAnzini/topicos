@@ -16,7 +16,7 @@
             
             $id = uniqid();
 
-            $conn->query('INSERT INTO produtos (ProdutoId, nome, descricao, preco, foto) VALUES ('.$id.','.$nome.','.$descricao.','.$preco.','.$imageData.')');
+            $conn->query('INSERT INTO produtos (ProdutoId, nome, descricao, preco, foto) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'")');
     
         }
     
