@@ -8,7 +8,15 @@
     if(isset( $_SESSION["adm"]) && $_SESSION["adm"] == "true"){
         if(isset($_POST["nome"])){
             $nome = $_POST["nome"];
-        
+            $descricao = $_POST["descricao"];
+            $base64 = $_POST['imagem'];
+            $base64 = preg_replace('/^data:image\/\w+;base64,/', '', $base64);
+            $imageData = base64_decode($base64);
+            $preco = $_POST['preco'];
+            
+            $id = uniqid();
+
+            $conn->query('INSERT INTO produtos (ProdutoId, nome, descricao, preco, foto) VALUES ('.$id.','.$nome.','.$descricao.','.$preco.','.$imageData.')');
     
         }
     
@@ -21,7 +29,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form method="POST">
         <label for="nome">Nome</label>
         <input id="nome" name="nome" type="text" required><br>
         <label for="descricao">Descricao</label>
