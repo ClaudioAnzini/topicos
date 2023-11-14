@@ -1,131 +1,134 @@
-
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funerária Anzini</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funerária Anzini</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
-    <header>
-        <a id="site-titulo" href="index.html">Anzini</a>
-        <ul id="menu-itens">
-          <li class="menu-item activate menu-item-activate sumir"><a href="index.html">Caixões</a></li>
-          <li class="menu-item sumir"><a>Lápides</a></li>
-          <li class="menu-item sumir"><a>Transportes</a></li>
-          <li class="menu-item sumir"><a>Contato</a></li>
-            <li class="menu-item" id="menu-reponsivo"><a>&#9776;</a></li>
-        </ul>
-    </header>
-    <section class="section-cor">
-      <h1>Sempre se esforçando para a satifação do cliente</h1>
-      <p>Funerária no Campus IFC</p>
-      <a href="saibamais.html" class="botao-primario" style="margin-top: 30px;">Saiba Mais</a>
-    </section>
+  <header>
+    <a id="site-titulo" href="index.html">Anzini</a>
+    <ul id="menu-itens" style="text-decoration: none;">
+      <li class="menu-item activate menu-item-activate sumir"><a href="index.html">Caixões</a></li>
+      <li class="menu-item sumir"><a>Lápides</a></li>
+      <li class="menu-item sumir"><a>Transportes</a></li>
+      <li class="menu-item sumir"><a>Crematório</a></li>
+      <li class="menu-item sumir"><a>Funerária</a></li>
+      <li><a><span class="menu-item" id="menu-reponsivo" style="font-size:30px;cursor:pointer"
+            onclick="openNav()">&#9776;</span></a></li>
+    </ul>
+  </header>
+  <section class="section-cor">
+    <h1>Sempre se esforçando para a satifação do cliente</h1>
+    <p>Funerária no Campus IFC</p>
+    <a href="saibamais.html" class="botao-primario" style="margin-top: 30px;">Saiba Mais</a>
+  </section>
 
 
 
   <section id="demo" class="carousel slide" data-bs-ride="carousel">
 
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-  </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+    </div>
 
-  <div class="carousel-inner">
-    <a class="carousel-item active">
-      <img style="height: 450px;width: 100%; object-fit: cover;" src="img/carro_funerario.jpg" alt="Carro Funerário">
-      <div class="carousel-caption">
-        <h3>Carros Funerários</h3>
-        <p>Os melhores transportes</p>
-      </div>
-    </a>
-    <a class="carousel-item">
-      <img style="height: 450px;width: 100%; object-fit: cover;" src="img/Lapides.jpg" alt="Los Angeles">
-      <div class="carousel-caption">
-        <h3>Cerimônia</h3>
-        <p>As melhores cerimônias de enterro</p>
-      </div>
-    </a>
-    <a class="carousel-item">
-      <img style="height: 450px;width: 100%; object-fit: cover;" src="img/flores.jpg" alt="Los Angeles">
-      <div class="carousel-caption">
-        <h3>Flores</h3>
-        <p>O maior arsenal de flores</p>
-      </div>
-    </a>
-    <a class="carousel-item">
-      <img style="height: 450px;width: 100%; object-fit: cover;" src="img/caixoes.jpg" alt="Los Angeles">
-      <div class="carousel-caption">
-        <h3>Caixões</h3>
-        <p>Caixões personalizados</p>
-      </div>
-    </a>
-  </div>
+    <div class="carousel-inner">
+      <a class="carousel-item active">
+        <img style="height: 450px;width: 100%; object-fit: cover;" src="img/carro_funerario.jpg" alt="Carro Funerário">
+        <div class="carousel-caption">
+          <h3>Carros Funerários</h3>
+          <p>Os melhores transportes</p>
+        </div>
+      </a>
+      <a class="carousel-item">
+        <img style="height: 450px;width: 100%; object-fit: cover;" src="img/Lapides.jpg" alt="Los Angeles">
+        <div class="carousel-caption">
+          <h3>Cerimônia</h3>
+          <p>As melhores cerimônias de enterro</p>
+        </div>
+      </a>
+      <a class="carousel-item">
+        <img style="height: 450px;width: 100%; object-fit: cover;" src="img/flores.jpg" alt="Los Angeles">
+        <div class="carousel-caption">
+          <h3>Flores</h3>
+          <p>O maior arsenal de flores</p>
+        </div>
+      </a>
+      <a class="carousel-item">
+        <img style="height: 450px;width: 100%; object-fit: cover;" src="img/caixoes.jpg" alt="Los Angeles">
+        <div class="carousel-caption">
+          <h3>Caixões</h3>
+          <p>Caixões personalizados</p>
+        </div>
+      </a>
+    </div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
   </section>
   <section class="section-cor" style="height: 50px;">
   </section>
   <section class="section-itens" id="section-itens">
     <div class="flex-div">
-    <a class="bloco">
-      <div class="bloco-div-texto">
-        <h3>Lápides</h3>
-        <p>As melhores lapides para você</p>
-      </div>
-      <div class="bloco-div-img">
-        <img src="img/lapide2.webp">
-      </div>
-    </a>
-    <a class="bloco">
-      <div class="bloco-div-texto">
-        <h3>Crematório</h3>
-        <p>O melhor crematório da cidade de Araquari</p>
-      </div>
-      <div class="bloco-div-img">
-        <img src="img/crematorio.jpg">
-      </div>
-    </a>
-    <a class="bloco">
-      <div class="bloco-div-texto">
-        <h3>Funerária</h3>
-        <p>Atendimento funerário 24 horas</p>
-      </div>
-      <div class="bloco-div-img">
-        <img src="img/funeraria2.jpg">
-      </div>
-    </a>
-    <a class="bloco">
-      <div class="bloco-div-texto">
-        <h3>Caixões</h3>
-        <p>Caixões de todos os tipos e tamanhos</p>
-      </div>
-      <div class="bloco-div-img">
-        <img src="img/caixaooooooooo.webp">
-      </div>
-    </a>
-    <a class="bloco">
-      <div class="bloco-div-texto">
-        <h3>Transportes</h3>
-        <p>Os melhores transportes para o seu funeral</p>
-      </div>
-      <div class="bloco-div-img">
-        <img src="img/carro1.jpg">
-      </div>
-    </a>
-  </a>
- 
+      <a class="bloco">
+        <div class="bloco-div-texto">
+          <h3>Lápides</h3>
+          <p>As melhores lapides para você</p>
+        </div>
+        <div class="bloco-div-img">
+          <img src="img/lapide2.webp">
+        </div>
+      </a>
+      <a class="bloco">
+        <div class="bloco-div-texto">
+          <h3>Crematório</h3>
+          <p>O melhor crematório da cidade de Araquari</p>
+        </div>
+        <div class="bloco-div-img">
+          <img src="img/crematorio.jpg">
+        </div>
+      </a>
+      <a class="bloco">
+        <div class="bloco-div-texto">
+          <h3>Funerária</h3>
+          <p>Atendimento funerário 24 horas</p>
+        </div>
+        <div class="bloco-div-img">
+          <img src="img/funeraria2.jpg">
+        </div>
+      </a>
+      <a class="bloco">
+        <div class="bloco-div-texto">
+          <h3>Caixões</h3>
+          <p>Caixões de todos os tipos e tamanhos</p>
+        </div>
+        <div class="bloco-div-img">
+          <img src="img/caixaooooooooo.webp">
+        </div>
+      </a>
+      <a class="bloco">
+        <div class="bloco-div-texto">
+          <h3>Transportes</h3>
+          <p>Os melhores transportes para o seu funeral</p>
+        </div>
+        <div class="bloco-div-img">
+          <img src="img/carro1.jpg">
+        </div>
+      </a>
+      </a>
+
     </div>
   </section>
 
@@ -133,28 +136,30 @@
     <h1>Sobre</h1>
     <h3>Funerária Anzini</h3>
 
-    <p>A Funerária Anzini, com mais de 30 anos de experiência, é reconhecida por sua sensibilidade e serviços personalizados para famílias enlutadas. Destacando-se pela abordagem compassiva, oferece um ambiente acolhedor e suporte contínuo, respeitando as tradições familiares durante o período de luto.</p>
+    <p>A Funerária Anzini, com mais de 30 anos de experiência, é reconhecida por sua sensibilidade e serviços
+      personalizados para famílias enlutadas. Destacando-se pela abordagem compassiva, oferece um ambiente acolhedor e
+      suporte contínuo, respeitando as tradições familiares durante o período de luto.</p>
     <img src="img/funeraria.jpg" class="imagem">
   </section>
   <section class="section-final">
-      <h1>CONTATO</h1>
-      <div class="flex">
-        <div class="flex2">
-          <a href="mailto:claudioanzinineto123@gmail.com">claudioanzinineto123@gmail.com</a>
-          <a href="tel:+5547999481168">(47) 999481168</a>
-        </div>
-        <div class="botoes-meio">
-          <a class="botao-verde" href="whatsapp">Fale pelo WhatsApp</a>
-          
+    <h1>CONTATO</h1>
+    <div class="flex">
+      <div class="flex2">
+        <a href="mailto:claudioanzinineto123@gmail.com">claudioanzinineto123@gmail.com</a>
+        <a href="tel:+5547999481168">(47) 999481168</a>
+      </div>
+      <div class="botoes-meio">
+        <a class="botao-verde" href="whatsapp">Fale pelo WhatsApp</a>
 
-        </div>
-        <div class="flex2">
-          <p>Endereço: BR-280,</p>
-          <p>Colégio Agrícola, Araquari - SC;</p>
-          <p>89245-000 - Brasil</p>
-        </div>
 
       </div>
+      <div class="flex2">
+        <p>Endereço: BR-280,</p>
+        <p>Colégio Agrícola, Araquari - SC;</p>
+        <p>89245-000 - Brasil</p>
+      </div>
+
+    </div>
 
   </section>
 
