@@ -5,7 +5,7 @@
 
     if(isset( $_SESSION["adm"]) && $_SESSION["adm"] == "true"){
 
-        if(isset($_POST["nome"])){
+        if(isset($_POST["type"]) && $_POST['$type'] == 'criarproduto'){
             $nome = $_POST["nome"];
             $descricao = $_POST["descricao"];
             $base64 = $_POST['imagem'];
@@ -15,7 +15,7 @@
             
             $id = uniqid();
 
-            $conn->query('INSERT INTO produtos (ProdutoId, nome, descricao, preco, foto) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'")');
+            $conn->query('INSERT INTO produtos (id, nome, descricao, preco, foto, tipoid) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'","12")');
     
         }
     
@@ -41,7 +41,6 @@
         $<input type="number" name="preco" id="preco" required><br>
         <button type="submit">Enviar</button>
     </form>
-
 </body>
 </html>
 
