@@ -10,6 +10,5 @@ if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-echo "<script>console.log('Conexão bem-sucedida!')</script>";
 
 ?>
