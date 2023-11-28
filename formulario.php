@@ -5,7 +5,7 @@
 
     if(isset( $_SESSION["adm"]) && $_SESSION["adm"] == "true"){
 
-        if(isset($_POST["type"]) && $_POST['$type'] == 'criarproduto'){
+        if(isset($_POST["type"]) && $_POST['type'] == 'criarproduto'){
             $nome = $_POST["nome"];
             $descricao = $_POST["descricao"];
             $base64 = $_POST['imagem'];
