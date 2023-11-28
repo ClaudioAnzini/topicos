@@ -61,7 +61,7 @@
                 formData.append('descricao', document.getElementById('descricao').value);
                 formData.append('preco', document.getElementById('preco').value);
 
-                fetch('produtos.php', {
+                fetch('', {
                     method: 'POST',
                     body: formData
                 })
