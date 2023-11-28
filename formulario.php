@@ -24,27 +24,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Criar Produtos</title>
     </head>
     <body>
+
+        <h1>Criar Produto</h1>
         <form method="POST" enctype="multipart/form-data">
             <input type="hidden" name="type" value="criarproduto">
             <label for="nome">Nome</label>
             <input id="nome" name="nome" type="text" required><br>
             <label for="descricao">Descricao</label>
             <textarea id="descricao" name="descricao" type="text" required></textarea><br>
-
-            <p><label for="cover">Cover Image:</label>
-            <input type="file" id="imageInput" accept="image/*">
+            <label for="cover">Imagem</label>
+            <input type="file" id="imageInput" accept="image/*"><br>
             <input type="hidden" id="cover" name="cover" value="">
             <img id="imagePreview" src="" alt="Preview da Imagem" style="max-width: 300px; max-height: 300px;">
-            <?php echo ($editing) ? '<input type="hidden" name="editing" value="' . $editId . '">' : null; ?>
-      </p>
-
+          
             <label for="preco">preço</label>
             $<input type="number" name="preco" id="preco" required><br>
             <button type="submit">Enviar</button>
         </form>
+
+
+
     </body>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
