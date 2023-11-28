@@ -26,7 +26,32 @@
                 // Exiba ou armazene o valor de $imagem_base64 conforme necessário
                 $imageData = $imagem_base64;
             } else {
-                die("Erro ao processar o upload da imagem.");
+                switch ($_FILES['imagem']['error']) {
+                    case UPLOAD_ERR_INI_SIZE:
+                        die("O arquivo excede o limite definido na diretiva upload_max_filesize no php.ini.");
+                        break;
+                    case UPLOAD_ERR_FORM_SIZE:
+                        die("O arquivo enviado excede o limite definido no formulário HTML.");
+                        break;
+                    case UPLOAD_ERR_PARTIAL:
+                        die("O upload do arquivo foi apenas parcialmente concluído.");
+                        break;
+                    case UPLOAD_ERR_NO_FILE:
+                        die("Nenhum arquivo foi enviado.");
+                        break;
+                    case UPLOAD_ERR_NO_TMP_DIR:
+                        die("Falta um diretório temporário. Entre em contato com o administrador do servidor.");
+                        break;
+                    case UPLOAD_ERR_CANT_WRITE:
+                        die("Falha ao gravar o arquivo no disco. Entre em contato com o administrador do servidor.");
+                        break;
+                    case UPLOAD_ERR_EXTENSION:
+                        die("O upload do arquivo foi interrompido por uma extensão do PHP. Entre em contato com o administrador do servidor.");
+                        break;
+                    default:
+                        die("Erro desconhecido. Entre em contato com o administrador do servidor.");
+                        break;
+                }
             }
 
             $conn->query('INSERT INTO produtos (id, nome, descricao, preco, foto, tipoid) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'","12")');
