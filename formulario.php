@@ -8,12 +8,22 @@
         if(isset($_POST["type"]) && $_POST['type'] == 'criarproduto'){
             $nome = $_POST["nome"];
             $descricao = $_POST["descricao"];
-            $imagem_temporaria = $_FILES["imagem"]["tmp_name"];
-            $conteudo_imagem = file_get_contents($imagem_temporaria);
-            $imagem_base64 = base64_encode($conteudo_imagem);
             $preco = $_POST['preco'];
             
             $id = uniqid();
+
+            if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+                // Caminho temporário do arquivo
+                $caminho_temporario = $_FILES['imagem']['tmp_name'];
+        
+                // Leia o conteúdo do arquivo
+                $conteudo_imagem = file_get_contents($caminho_temporario);
+        
+                // Converta o conteúdo para Base64
+                $imagem_base64 = base64_encode($conteudo_imagem);   
+            } else {
+                die('vtmnc');
+            }
 
             $conn->query('INSERT INTO produtos (id, nome, descricao, preco, foto, tipoid) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'","12")');
     
