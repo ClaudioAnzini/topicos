@@ -20,19 +20,6 @@
         }
     
 ?>
-
-<form action="POST">
-        <label for="nomeproduto">Nome do produto</label>
-        <input name="nomeproduto" id="nomeproduto" type="text">
-        
-        <label for="descproduto">Nome do produto</label>
-        <textarea name="descproduto" id="descproduto" type="text"></textarea>
-
-        <label for="nomeproduto">Nome do produto</label>
-        <input id="nomeproduto" type="">
-
-
-</form>
         
 <!DOCTYPE html>
 <html lang="en">
@@ -43,10 +30,11 @@
 </head>
 <body>
     <form method="POST">
+        <input type="hidden" name="type" value="criarproduto">
         <label for="nome">Nome</label>
         <input id="nome" name="nome" type="text" required><br>
         <label for="descricao">Descricao</label>
-        <input id="descricao" name="descricao" type="text" required><br>
+        <textarea id="descricao" name="descricao" type="text" required></textarea<br>
         <label for="imagem">imagem</label>
         <input type="file" accept="image/*" id="imagem" name="imagem" required><br>
         <label for="preco">preço</label>
