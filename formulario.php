@@ -46,7 +46,7 @@
 <script>
 
         function processarImagem() {
-            var inputImagem = document.getElementById('inputImagem');
+            var inputImagem = document.getElementById('imagem');
 
             if (inputImagem.files.length > 0) {
                 var arquivo = inputImagem.files[0];
