@@ -8,7 +8,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: blue !important;
+    background-color: #8E0D0D !important;
 }
 header{
     height: 64px;
@@ -251,4 +251,23 @@ header{
     #menu-reponsivo{
         margin-top: -22px;
     }
+}
+.seis_blocos{
+    height: 400px;
+    width: 450px;
+    background-color: #7B1818;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 12px black;
+    text-decoration: none;
+    display: flex;
+    cursor: pointer;
+}
+.section-blocos_seis{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1500px;
 }
