@@ -11,8 +11,12 @@
                 $preco = $_POST['preco'];
                 $id = uniqid();
     
-                echo base64_decode($_POST['imagem']);
+                $imagem = $_FILES['imagem'];
+
+                $base64 = base64_encode($imagem['tmp_name']);
                 
+                echo $base64;
+
                 $imageData = 'nada';
     
                 $conn->query('INSERT INTO produtos (id, nome, descricao, preco, foto, tipoid) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'","12")');
