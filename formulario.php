@@ -9,12 +9,10 @@
             $nome = $_POST["nome"];
             $descricao = $_POST["descricao"];
             $preco = $_POST['preco'];
-            
             $id = uniqid();
 
-            $base64 = $_POST['cover'];
-            $base64 = preg_replace('/^data:image\/\w+;base64,/', '', $base64);
-            $imageData = base64_decode($base64);
+            $imagem = file_get_contents($_FILES['imagem']['tmp_name']);
+            $imageData = base64_encode($imagem);
 
             $conn->query('INSERT INTO produtos (id, nome, descricao, preco, foto, tipoid) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'","12")');
     
@@ -37,35 +35,12 @@
         <label for="descricao">Descricao</label>
         <textarea id="descricao" name="descricao" type="text" required></textarea><br>
         <label for="imagem">imagem</label>
-        <input type="file" name="imagem" id="imagem" accept="image/*" onchange="processarImagem()" required><br>
+        <input type="file" name="imagem" id="imagem" accept="image/*" required><br>
         <label for="preco">preço</label>
         $<input type="number" name="preco" id="preco" required><br>
         <button type="submit">Enviar</button>
     </form>
 </body>
-<script>
-
-        function processarImagem() {
-            var inputImagem = document.getElementById('imagem');
-
-            if (inputImagem.files.length > 0) {
-                var arquivo = inputImagem.files[0];
-                var leitor = new FileReader();
-
-                leitor.onload = function (e) {
-                    var imagemBase64 = e.target.result;
-                    inputImagem.value = imagemBase64;
-
-                
-                };
-
-                leitor.readAsDataURL(arquivo);
-            } else {
-                console.log("Nenhum arquivo selecionado.");
-            }
-        }
-
-</script>
 
 </html>
 
