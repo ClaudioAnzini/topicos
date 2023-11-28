@@ -8,8 +8,9 @@
         if(isset($_POST["type"]) && $_POST['type'] == 'criarproduto'){
             $nome = $_POST["nome"];
             $descricao = $_POST["descricao"];
-            $imagem = file_get_contents($_FILES["imagem"]["tmp_name"]);
-            $imageData = base64_encode($imagem);
+            $imagem_temporaria = $_FILES["imagem"]["tmp_name"];
+            $conteudo_imagem = file_get_contents($imagem_temporaria);
+            $imageData = base64_encode($conteudo_imagem);
             $preco = $_POST['preco'];
             
             $id = uniqid();
