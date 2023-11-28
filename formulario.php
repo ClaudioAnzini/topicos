@@ -10,7 +10,7 @@
                 $descricao = $_POST["descricao"];
                 $preco = $_POST['preco'];
                 $id = uniqid();
-                $imageData = $_POST['imagem'];
+                $imageData = $_POST['cover'];
                 
     
                 $conn->query('INSERT INTO produtos (id, nome, descricao, preco, foto, tipoid) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'","12")');
@@ -19,67 +19,59 @@
         
     ?>
             
-            <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form id="produtoForm" method="POST">
-        <input type="hidden" name="type" value="criarproduto">
-        <label for="nome">Nome</label>
-        <input id="nome" name="nome" type="text" required><br>
-        <label for="descricao">Descricao</label>
-        <textarea id="descricao" name="descricao" type="text" required></textarea><br>
-        <label for="imagem">Imagem</label>
-        <input type="file" name="imagem" id="imagem" accept="image/*" required><br>
-        <label for="preco">Preço</label>
-        $<input type="number" name="preco" id="preco" required><br>
-        <button type="submit">Enviar</button>
-    </form>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="type" value="criarproduto">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" required><br>
+            <label for="descricao">Descricao</label>
+            <textarea id="descricao" name="descricao" type="text" required></textarea><br>
 
-    <script>
-        document.getElementById('produtoForm').addEventListener('submit', (event) => {
-            event.preventDefault();
+            <p><label for="cover">Cover Image:</label>
+            <input type="file" id="imageInput" accept="image/*">
+            <input type="hidden" id="cover" name="cover" value="">
+            <img id="imagePreview" src="" alt="Preview da Imagem" style="max-width: 300px; max-height: 300px;">
+            <?php echo ($editing) ? '<input type="hidden" name="editing" value="' . $editId . '">' : null; ?>
+      </p>
 
-            const imageInput = document.getElementById('imagem');
-            const imageFile = imageInput.files[0];
+            <label for="preco">preço</label>
+            $<input type="number" name="preco" id="preco" required><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const imagePreview = document.getElementById('imagePreview');
+            const coverInput = document.getElementById('cover');
+            const imageInput = document.getElementById('imageInput');
 
-            if (!imageFile) {
-                alert('Please select an image file');
-                return;
-            }
+            imagePreview.src = coverInput.value;
 
-            const imageFileReader = new FileReader();
-            imageFileReader.onload = (event) => {
-                const base64Image = event.target.result;
-                const formData = new FormData();
-                formData.append('imagem', base64Image);
-                formData.append('nome', document.getElementById('nome').value);
-                formData.append('descricao', document.getElementById('descricao').value);
-                formData.append('preco', document.getElementById('preco').value);
+            imageInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
 
-                fetch('', {
-                    method: 'POST',
-                    body: formData
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Produto criado com sucesso!');
-                            document.getElementById('produtoForm').reset();
-                        } else {
-                            alert('Erro ao criar produto');
-                        }
-                    });
-            };
-            imageFileReader.readAsDataURL(imageFile);
-        });
-    </script>
-</body>
-</html>
+                if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    coverInput.value = e.target.result;
+                    imagePreview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+                } else {
+                coverInput.value = coverInput.dataset.default;
+                imagePreview.src = coverInput.dataset.default;
+                }
+            });
+            });
+        </script>
+    </html>
     
     <?php 
         }
