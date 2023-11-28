@@ -264,6 +264,7 @@ header{
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .section-blocos_seis{
     display: flex;
@@ -272,13 +273,10 @@ header{
     flex-wrap: wrap;
     margin: auto;
     max-width: 1500px;
+    
 }
 .seis_blocos > img{
     width: 55%;
     height: 50%;
-    margin-top: -100px;
     border-radius: 10px;
-}
-.seis_blocos > img > h3{
-    
 }
