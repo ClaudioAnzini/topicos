@@ -11,7 +11,7 @@
                 $preco = $_POST['preco'];
                 $id = uniqid();
     
-                echo $_POST['imagem'];
+                echo base64_decode($_POST['imagem']);
                 
                 $imageData = 'nada';
     
