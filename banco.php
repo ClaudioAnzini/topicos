@@ -1,5 +1,5 @@
 <?php
-$hostname = 'database.hythelis.me';  
+$hostname = 'database.hythelis.com';  
 $username = 'topicos'; 
 $password = 'Senha123@';
 $database = 'topicos'; 
