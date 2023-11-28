@@ -12,17 +12,21 @@
             
             $id = uniqid();
 
+            // Verifique se um arquivo foi enviado
             if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
                 // Caminho temporário do arquivo
                 $caminho_temporario = $_FILES['imagem']['tmp_name'];
-        
+
                 // Leia o conteúdo do arquivo
                 $conteudo_imagem = file_get_contents($caminho_temporario);
-        
+
                 // Converta o conteúdo para Base64
-                $imagem_base64 = base64_encode($conteudo_imagem);   
+                $imagem_base64 = base64_encode($conteudo_imagem);
+
+                // Exiba ou armazene o valor de $imagem_base64 conforme necessário
+                $imageData = $imagem_base64;
             } else {
-                die('vtmnc');
+                die("Erro ao processar o upload da imagem.");
             }
 
             $conn->query('INSERT INTO produtos (id, nome, descricao, preco, foto, tipoid) VALUES ("'.$id.'","'.$nome.'","'.$descricao.'",'.$preco.',"'.$imageData.'","12")');
@@ -46,7 +50,7 @@
         <label for="descricao">Descricao</label>
         <textarea id="descricao" name="descricao" type="text" required></textarea><br>
         <label for="imagem">imagem</label>
-        <input type="file" accept="image/*" id="imagem" name="imagem" required><br>
+        <input type="file" name="imagem" id="imagem" accept="image/*" required><br>
         <label for="preco">preço</label>
         $<input type="number" name="preco" id="preco" required><br>
         <button type="submit">Enviar</button>
