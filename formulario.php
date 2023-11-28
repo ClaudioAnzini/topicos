@@ -34,7 +34,7 @@
         <label for="nome">Nome</label>
         <input id="nome" name="nome" type="text" required><br>
         <label for="descricao">Descricao</label>
-        <textarea id="descricao" name="descricao" type="text" required></textarea<br>
+        <textarea id="descricao" name="descricao" type="text" required></textarea><br>
         <label for="imagem">imagem</label>
         <input type="file" accept="image/*" id="imagem" name="imagem" required><br>
         <label for="preco">preço</label>
