@@ -11,7 +11,7 @@
       while ($rowsidebar = $resultsidebar->fetch_assoc()) {
 
         
-      echo '<img style="height:20px;" class="sidebar-img" alt="' . $rowsidebar['title'] . '" src="data:image/jpeg;base64,' . base64_encode($rowsidebar["cover_image"]) .'"></img>';
+      echo '<img style="height:20px;" class="sidebar-img" alt="' . $rowsidebar['title'] . '" src="data:image/jpeg;base64,' . $rowsidebar["cover_image"] .'"></img>';
 
       }
     } else {
